@@ -124,6 +124,8 @@ This example builds a `lua.exe` and runs the [test.lua][1] script as post build 
 ## Build ##
 This project uses [CMake][2] to generate platform and compiler-specific build files. 
 
+Build just tested on Windows. Will most likely not work on other platforms. You had to atleast change the `__declspec(dllexport)` when you are using GCC to ```__attribute__((dllexport))``` or ```__attribute__((visibility("default")))``` when GCC version is greater equal than 4. But for simplicity I decided not to do it.
+
 1. Clone the repository with Lua submodule
     ```
     git clone --recurse-submodules https://github.com/Seng3694/CLuaModuleExample
